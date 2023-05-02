@@ -32,7 +32,7 @@ RUN cd /opt \
         --with-stream \
     && make modules
 
-FROM nginx:$NGINX_VERSION-alpine as runner
+FROM nginx:alpine as runner
 
 COPY --from=build /opt/nginx/objs/ngx_http_upload_module.so /usr/lib/nginx/modules
 
